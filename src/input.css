@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+@layer utilities {
+  @keyframes pulseSlow {
+    0%, 100% { transform: scale(1); opacity: 0.85; }
+    50% { transform: scale(1.06); opacity: 1; }
+  }
+
+  @keyframes spinSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes floatSlow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes auraGlow {
+    0%, 100% { filter: drop-shadow(0 0 35px rgba(251, 191, 36, 0.45)); }
+    50% { filter: drop-shadow(0 0 65px rgba(245, 158, 11, 0.75)); }
+  }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 5s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spinSlow 35s linear infinite;
+  }
+
+  .animate-float {
+    animation: floatSlow 4s ease-in-out infinite;
+  }
+
+  .animate-aura-glow {
+    animation: auraGlow 4s ease-in-out infinite;
+  }
+
+  .glass-card {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .glass-pill {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .glass-pill:hover {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .glass-button {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-button:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+  }
+}
+
+select, option {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+option {
+  padding: 10px 14px;
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 191, 36, 0.5);
+}
+
+iframe[src*="chrome-extension://"],
+body > footer:not(#bottomBar),
+.ntp-footer,
+#ntp-footer,
+#brave-footer,
+.brave-footer,
+[id*="attribution"],
+[class*="attribution"],
+div[class*="customize"],
+div[id*="customize"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}

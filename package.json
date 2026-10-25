@@ -1,0 +1,17 @@
+{
+  "name": "browser-status-page-extentions",
+  "version": "1.0.0",
+  "description": "VoidTab - Modern New Tab Browser Extension",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/style.css",
+    "build:css:min": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/style.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
